@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/cartProducts.css">
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <div style="display: flex;">
+            <div>
+                <% allProducts.forEach((key)=>{ %>
+                    <div>
+                        <div class="product">
+                            <div class="product-images">
+                                <img src="<%= key.imgBuffer %>" alt="Motorola G34" class="main-image">
+                            </div>
+                            <div class="product-details">
+                                <h1>
+                                    <%= key.title %>
+                                </h1>
+                                <div class="ratings">
+                                    <span>4.2 ★</span>
+                                    <span>1,00,698 Ratings & 7,042 Reviews</span>
+                                    <span class="assured">Assured</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">₹<%= key.discountPrice %></span>
+                                    <span class="original-price">₹<%= key.markedPrice %></span>
+                                    <span class="discount">20% off</span>
+                                </div>
+                            </div>
+                            <form action="/cart/deleteFromCart" method="post">
+                                <input type="text" hidden="true" name="productId" value="<%=key.productId%>">
+                                <button class="btn btn-danger" type="submit" value="Submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-cart" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                    </svg> Remove
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <%}); %>
+            </div>
+
+            <div class="card">
+                <h2>PRICE DETAILS</h2>
+                <div class="price-details">
+                    <div class="detail">
+                        <span>Price</span>
+                        <span>₹<%= totalPrice %></span>
+                    </div>
+                    <div class="detail">
+                        <span>Discount</span>
+                        <span class="discount">- <%= discount %></span>
+                    </div>
+                    <div class="detail">
+                        <span>Delivery Charges</span>
+                        <span class="free"><s>₹110</s> Free</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="total-amount">
+                    <span>Total Amount</span>
+                    <span>₹<%= totalAmount %></span>
+                </div>
+                <p class="savings">You will save ₹<%= discount %> on this order</p>
+                <% if(totalAmount != 0) {%>
+                <form action="/cart/place-order" method="post">
+                    <button type="submit" class="btn btn-success">PLACE ORDER</button>
+                </form>
+                <% } %>
+            </div>
+
+        </div>
+</body>
+
+</html>

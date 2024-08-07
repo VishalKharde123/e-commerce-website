@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('./partials/head') %>
+    <title>Add Blog</title>
+</head>
+
+<body>
+  <%- include('./partials/navbar') %>
+    <form style="width: 30%;margin: 50px;" method="post" action="/addBlog/add" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="blogImg" class="form-label">Enter Image</label>
+        <input type="file" class="form-control" name="blogImg">
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Enter Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Enter Marked Price</label>
+        <input type="number" class="form-control" id="desc" name="markedPrice">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Enter Discount Price</label>
+        <input type="number" class="form-control" id="desc" name="discountPrice">
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Enter Category</label>
+        <select class="form-control" id="category" name="category" placeholder="Select">
+          <option value="grocery">Grocery</option>
+          <option value="mobiles">Mobiles</option>
+          <option value="fashion">Fashion</option>
+          <option value="furniture">Furniture</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+
+</html>

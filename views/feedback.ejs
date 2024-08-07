@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/cartProducts.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            .star-rating {
+                direction: rtl;
+                display: inline-flex;
+            }
+
+            .star {
+                font-size: 2em;
+                color: gold;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .star-rating input {
+                display: none;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <div style="display: flex;">
+            <div style="display: flex;">
+                <div style="width: 50%;">
+                    <% allProducts.forEach((key)=>{ %>
+                        <div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <img src="<%= key.imgBuffer %>" alt="Motorola G34" class="main-image">
+                                </div>
+                                <div class="product-details">
+                                    <h1>
+                                        <%= key.title %>
+                                    </h1>
+                                    <div class="ratings">
+                                        <span>4.2 ★</span>
+                                        <span>1,00,698 Ratings & 7,042 Reviews</span>
+                                        <span class="assured">Assured</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="current-price">₹<%= key.discountPrice %></span>
+                                        <span class="original-price">₹<%= key.markedPrice %></span>
+                                        <span class="discount">20% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%}); %>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded" style="width: 60%;">
+                    <form action="/feedback/add" method="post">
+                        <input type="text" name="productId" id="" hidden="true" value="<%= allProducts[0].productId %>">
+                        <button class="btn btn-light shadow p-3 mb-5 bg-white rounded" style="float: right;">Rate
+                            Product</button>
+                    </form>
+                    <h2>Ratings & Reviews</h2>
+                    <% feedbackData.forEach((key)=>{ %>
+                    <div class="shadow p-3 mb-5 bg-white rounded" style="margin-top: 50px;">
+                        <div>
+                            <label for="rating-4" class="star"><%= key.starCount %>&#9733;</label>
+                        </div>
+                       <%= key.message %>
+
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #2874F0;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 5px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: white;
+    color: #2874F0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product {
+    display: flex;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.product-images {
+    flex: 1;
+}
+
+.product-images .main-image {
+    width: 100%;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 60px;
+    cursor: pointer;
+}
+
+.product-details {
+    flex: 2;
+    margin-left: 20px;
+}
+
+.product-details h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ratings span {
+    margin-right: 10px;
+}
+
+.assured {
+    background-color: #2874F0;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.current-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #388E3C;
+    margin-right: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #757575;
+    margin-right: 10px;
+}
+
+.discount {
+    color: #388E3C;
+}
+
+.offers {
+    margin-bottom: 20px;
+}
+
+.offers h2 {
+    margin-bottom: 10px;
+}
+
+.offers ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.offers li {
+    margin-bottom: 5px;
+}
+
+.offers a {
+    color: #2874F0;
+    text-decoration: none;
+}
+
+.exchange {
+    margin-top: 20px;
+}
+
+.exchange input {
+    margin-right: 10px;
+}
+
+.exchange label {
+    margin-right: 20px;
+}
+
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.price-details .detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.price-details .detail span {
+    color: #333;
+}
+
+.price-details .discount {
+    color: green;
+}
+
+.price-details .free {
+    color: green;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.savings {
+    text-align: center;
+    color: green;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
