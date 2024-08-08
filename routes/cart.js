@@ -4,6 +4,7 @@ const router = express.Router();
 const sessionMiddleware = require('../controllers/sessionManage');
 const CartModel = require('../models/CartModel');
 const BlogModel = require('../models/BlogModel');
+const AddressModel = require('../models/AddressModel');
 
 router.get('/', sessionMiddleware, async(req, res)=>{
     var allProducts = [];
@@ -70,8 +71,26 @@ router.post('/deleteFromCart', sessionMiddleware, async (req, res)=>{
 });
 
 router.post('/place-order',async (req, res)=>{
-    await CartModel.updateMany({userId: req.payload},{paymentStatus: true});
-    res.status(200).redirect('/cart');
+    const userName = req.userName;
+    const addressData = await AddressModel.find({userId: req.payload});
+    
+    res.status(200).render('placeOrder', {userName, addressData});
+})
+
+router.post('/save-address',async (req, res)=>{
+    const userName = req.userName;
+    
+    await AddressModel.create({
+        userId: req.payload,
+        name: req.body.name,
+        phone: req.body.phone,
+        address: req.body.address,
+        pinCode: req.body.zipcode
+    })
+
+    const addressData = await AddressModel.find({userId: req.payload});
+    
+    res.status(200).render('placeOrder', {userName, addressData});
 })
 
 module.exports = router;

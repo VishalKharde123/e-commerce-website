@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.delivery-address-section {
+    width: 50%;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.address-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.address-card.selected {
+    background-color: #e6f0ff;
+    border-left: 4px solid #007bff;
+}
+
+.address-details {
+    flex: 1;
+}
+
+.address-card input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.name {
+    font-weight: bold;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    padding: 2px 6px;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.phone {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.address {
+    margin: 0;
+}
+
+.edit-btn, .deliver-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #007bff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.deliver-btn {
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.add-new-address {
+    padding: 10px;
+    text-align: center;
+}
+
+.add-new-address a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.order-summary, .payment-options {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.order-summary h3, .payment-options h3 {
+    margin: 0;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+#new-address-form {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#new-address-form.hidden {
+    display: none;
+}
+
+#new-address-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
