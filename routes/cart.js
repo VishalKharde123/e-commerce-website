@@ -93,4 +93,9 @@ router.post('/save-address',async (req, res)=>{
     res.status(200).render('placeOrder', {userName, addressData});
 })
 
+router.post('/order', async(req, res)=>{
+    await CartModel.updateMany({userId: req.payload},{paymentStatus: true});
+    res.send('Ordered');
+})
+
 module.exports = router;
